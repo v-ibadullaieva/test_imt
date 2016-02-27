@@ -2,22 +2,3 @@
 
 Допустим, вы снова изменили и проиндексировали файл README, а затем изменили файл benchmarks.rb без индексирования. Если вы выполните команду status, вы опять увидите что-то вроде:
 
-$ git status
-# On branch master
-# Changes to be committed:
-#   (use "git reset HEAD <file>..." to unstage)
-#
-#   new file:   README
-#
-# Changes not staged for commit:
-#   (use "git add <file>..." to update what will be committed)
-#
-#   modified:   benchmarks.rb
-#
-Чтобы увидеть, что же вы изменили, но пока не проиндексировали, наберите git diff без аргументов:
-
-$ git diff
-diff --git a/benchmarks.rb b/benchmarks.rb
-index 3cb747f..da65585 100644
---- a/benchmarks.rb
-+++ b/benchmarks.rb
