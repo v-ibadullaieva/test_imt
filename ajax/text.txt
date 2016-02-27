@@ -1,0 +1,23 @@
+нать, что конкретно поменялось, а не только какие файлы были изменены — вы можете использовать команду git diff. Позже мы рассмотрим команду git diff подробнее; вы, скорее всего, будете использовать эту команду для получения ответов на два вопроса: что вы изменили, но ещё не проиндексировали, и что вы проиндексировали и собираетесь фиксировать. Если git status отвечает на эти вопросы слишком обобщённо, то git diff показывает вам непосредственно добавленные и удалённые строки — собственно заплатку (patch).
+
+Допустим, вы снова изменили и проиндексировали файл README, а затем изменили файл benchmarks.rb без индексирования. Если вы выполните команду status, вы опять увидите что-то вроде:
+
+$ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#   new file:   README
+#
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#
+#   modified:   benchmarks.rb
+#
+Чтобы увидеть, что же вы изменили, но пока не проиндексировали, наберите git diff без аргументов:
+
+$ git diff
+diff --git a/benchmarks.rb b/benchmarks.rb
+index 3cb747f..da65585 100644
+--- a/benchmarks.rb
++++ b/benchmarks.rb
